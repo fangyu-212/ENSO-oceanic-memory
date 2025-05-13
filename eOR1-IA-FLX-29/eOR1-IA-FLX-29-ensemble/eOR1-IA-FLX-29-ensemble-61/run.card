@@ -1,0 +1,38 @@
+# $Revision:: 1052                                     $ Revision of last commit
+# $Author:: sdipsl                                     $ Author of last commit
+# $Date:: 2014-09-11 16:23:32 +0200 (Thu, 11 Sep 2014) $ Date of last commit
+# IPSL (2006)
+#  This software is governed by the CeCILL licence see libIGCM/libIGCM_CeCILL.LIC
+
+#========================================================================
+[Configuration]
+#Compute date of loop
+PeriodDateBegin= 2022-01-01
+PeriodDateEnd= 2022-12-31
+CumulPeriod= 4
+# State of Job "Start", "Running", "OnQueue", "Completed"
+PeriodState= Completed
+
+SubmitPath= /ccc/work/cont003/gen1140/liufangy/NEMOGCM_For_SETE/modipsl/config/NEMO_v6/eOR1-IA-FLX-29/eOR1-IA-FLX-29-ensemble/eOR1-IA-FLX-29-ensemble-61
+simuid=
+#========================================================================
+[PostProcessing]
+
+#RebuildRunning=y/n
+#RebuildToComplete=number of dir to rebuild
+#RebuildDateID=PeriodDateEnd correspondant au dernier flag de RebuildFrequency=true
+
+TimeSeriesRunning=n
+TimeSeriesCompleted=
+
+#========================================================================
+[Log]
+# Executables Size
+LastExeSize= ( 40531976, 20120616 )
+
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# CumulPeriod | PeriodDateBegin |   PeriodDateEnd |        RunDateBegin |          RunDateEnd |     RealCpuTime |     UserCpuTime |      SysCpuTime | ExeDate
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#           1 |        20190101 |        20191231 | 2024-03-30T17:03:22 | 2024-03-30T17:39:55 |      2192.39000 |         5.50000 |        18.55000 | OCE_Sep_30_23:41-IOS_Sep_30_23:39
+#           2 |        20200101 |        20201231 | 2024-03-30T17:53:28 | 2024-03-30T18:27:44 |      2056.33000 |         5.48000 |        18.62000 | OCE_Sep_30_23:41-IOS_Sep_30_23:39
+#           3 |        20210101 |        20211231 | 2024-03-30T18:40:28 | 2024-03-30T19:13:32 |      1983.82000 |         5.56000 |        18.64000 | OCE_Sep_30_23:41-IOS_Sep_30_23:39
