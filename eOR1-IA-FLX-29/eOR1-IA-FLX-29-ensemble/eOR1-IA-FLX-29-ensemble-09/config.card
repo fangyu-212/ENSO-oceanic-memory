@@ -1,0 +1,142 @@
+# $Id$
+# This is config.card file for restart with an NEW libIGCM simulation tree.
+# This is config.card file for NEMO ORCA1_LIM3_PISCES configuration
+#
+#========================================================================
+#D-- Compatibility -
+[Compatibility]
+libIGCM=1.0
+#D-- UserChoices -
+[UserChoices]
+#============================
+#-- (<8 chars MAX for JobName)
+JobName= eOR1-IA-FLX-29-ensemble-09
+#----- Short Name of Experiment
+ExperimentName=ORCA1ia
+#----- DEVT TEST PROD
+SpaceName=DEVT
+LongName="ORCA1_PISCES NEMO configuration"
+TagName=ORCA1_LIM3_PISCES
+#D- Choice of experiment in EXPERIEMENTS directory
+ExpType=ORCA1_LIM3_PISCES/jra/ia
+#============================
+#-- leap, noleap, 360d
+CalendarType=noleap
+#-- Begin and end of Job
+#-- "YYYY-MM-DD"
+DateBegin= 1967-01-01
+DateEnd= 1969-12-31
+#============================
+#-- 1Y, 1M, 5D, 1D
+PeriodLength=1Y
+#============================
+##============================
+#-- Source following file with module settings, only if it exists
+EnvFile=${SUBMIT_DIR}/../ARCH/arch.env
+#============================
+# config.card configuration options :
+#R_BC=$WORKDIR/../../gzi/rgzi002/IGCM/BC
+#R_INIT=$WORKDIR/../../gzi/rgzi002/IGCM/BC
+#========================================================================
+[Ensemble]
+#D- Ensemble run ? 'y' or 'n'
+#D- If 'y', fill in ensemble.card !!
+EnsembleRun=y
+EnsembleName= eOR1-IA-FLX-29-ensemble
+EnsembleType= Ens_DATE_periodic
+EnsembleMergeSave= y
+#========================================================================
+#D-- ListOfComponents -
+[ListOfComponents]
+#D- For each component, Name of component, Tag of component
+OCE= (opa9, NEMO_v6)
+#MBG= (pisces, PISCES)
+IOS= (xios, XIOS)
+#========================================================================
+#D-- Executable -
+[Executable]
+Name=nemo
+#D- For each component, Real name of executable
+OCE= (orca1flx_eOR1-IA-FLX-14.exe, nemo, 432MPI)
+#MBG= ("", "", "")
+IOS= (xios_server.exe, xios.x, 1MPI)
+#On ADA use 32 mpi for xios
+#IOS= (xios_server.exe, xios.x, 32MPI)
+#========================================================================
+#D-- Restarts -
+[Restarts]
+#D- by default: config.card describes no restart for all components
+#D-             ie start from Levitus or limit files
+#D- If you want to restart all components from the same simulation,
+#D-      put OveRule flag to 'y' and set the next 3 parameters
+OverRule= y
+#D- Last day of the experience used as restart
+RestartDate= 1966-12-31
+#D- Define restart simulation name
+RestartJobName=eOR1-IA-FLX-14
+#D- Path Server Group Login
+RestartPath=${ARCHIVE}/IGCM_OUT/ORCA1_LIM3_PISCES/DEVT/ORCA1ia
+
+#========================================================================
+#D-- OCE -
+[OCE]
+WriteFrequency="5D 1M 1Y"
+Restart= n
+##-- Last day of the experience used as restart
+RestartDate=1999-12-31
+# Define restart simulation name
+RestartJobName=NL1
+RestartPath=${ARCHIVE}/IGCM_OUT/ORCA1_LIM3
+# Old component name for restart (if empty, use new name)
+OldName=
+
+#========================================================================
+#D-- MBG -
+#[MBG]
+#WriteFrequency="1M 1Y"
+#Restart= n
+##-- Last day of the experience used as restart
+#RestartDate=0169-12-31
+# Define restart simulation name
+#RestartJobName=eOR1L3P-V1
+#RestartPath=${ARCHIVE}/../../gzi/rgzi002/IGCM_OUT/ORCA1_LIM3_PISCES/DEVT/ORCA1clim
+# Old component name for restart (if empty, use new name)
+#OldName=
+
+#========================================================================
+#D-- Post -
+[Post]
+ParserXIOS=FALSE
+#D- Do we pack restart and debug txt files, this flag determines
+#D- frequency of pack submission (use NONE for DRYRUN=3)
+PackFrequency= 3Y
+#D- To have only the last period in RESTART/*.tar : save 90% of volume.
+#D- TRUE to be effective (nothing by default)
+LightRestartPack=NONE
+#D- If you want to produce time series, this flag determines
+#D- frequency of post-processing submission (NONE if you dont want)
+TimeSeriesFrequency= NONE
+#D- If you want to produce seasonal average, this flag determines
+#D- the period of this average (NONE if you dont want)
+SeasonalFrequency= NONE
+#D- If you want to produce compute PCMDI metrics from seasonal average
+#D- Set FALSE to deactivate the metrics computation.
+MetricsPCMDI=FALSE
+#D- Offset for seasonal average first start dates ; same unit as SeasonalFrequency
+#D- Usefull if you do not want to consider the first X simulations years
+SeasonalFrequencyOffset=0
+
+#========================================================================
+#D-- IOS -
+[IOS]
+WriteFrequency=""
+# If config_Restarts_OverRule == 'n' next 4 params are read
+Restart= n
+##-- Last day of the experience used as restart for this component if Restart=y
+RestartDate=1899-12-31
+# Define restart simulation name for this component
+RestartJobName=EXP00
+RestartPath=${ARCHIVE}/IGCM_OUT/IPSLCM5A/DEVT/piControl
+# Old component name for restart (if empty, use new name)
+OldName=
+#========================================================================
