@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+    <!-- $id$ -->
+    
+ <!--
+============================================================================================================
+=                                           output files definition                                        =
+=                                            Define your own files for lim3                                =
+=                                         put the variables you want...                                    =
+============================================================================================================
+  -->
+    
+    <file_definition type="one_file" name="@expname@_@freq@" sync_freq="1d" min_digits="4" compression_level="4" >
+    
+      <file_group id="1ts_lim" output_freq="1ts"  output_level="10" enabled=".TRUE."/> <!-- 1 time step files -->
+      <file_group id="1h_lim" output_freq="1h"  output_level="10" enabled=".TRUE."/> <!-- 1h files -->
+      <file_group id="2h_lim" output_freq="2h"  output_level="10" enabled=".TRUE."/> <!-- 2h files -->
+      <file_group id="3h_lim" output_freq="3h"  output_level="10" enabled=".TRUE."/> <!-- 3h files -->     
+      <file_group id="4h_lim" output_freq="4h"  output_level="10" enabled=".TRUE."/> <!-- 4h files -->
+      <file_group id="6h_lim" output_freq="6h"  output_level="10" enabled=".TRUE."/> <!-- 6h files -->        
+      <file_group id="1d_lim" output_freq="1d"  output_level="_AUTO_" enabled="_AUTO_"/>  <!-- 5d files -->   	
+      <file_group id="5d_lim" output_freq="5d"  output_level="_AUTO_" enabled="_AUTO_"/>  <!-- 5d files -->   	
+
+      <file_group id="1m_lim" output_freq="1mo" output_level="_AUTO_" enabled="_AUTO_"> <!-- real monthly files -->
+
+       <file id="file15" name_suffix="_icemod" description="ice variables" >
+    
+         <field field_ref="snothic"          name="snthic"     long_name="surface_snow_thickness" level="1"  />
+         <field field_ref="icethic"          name="sithic"     long_name="sea_ice_thickness" level="1"        />
+         <field field_ref="icevolu"          name="sivolu" level="1"  />
+         <field field_ref="snowvol"          name="snvolu" level="1"  />
+         <field field_ref="iceconc"          name="siconc" level="1"  />
+
+     <!-- thermo -->
+         <field field_ref="micesalt"         name="sisali" level="1"  />
+         <field field_ref="micet"            name="sitemp" level="1" />
+         <field field_ref="icest"            name="sistem" level="1" />
+         <field field_ref="miceage"          name="siages" level="1" />
+         <field field_ref="isnowhc"          name="snheco" level="2" />
+         <field field_ref="icehc"            name="siheco" level="2" />
+
+     <!-- dyn -->
+         <field field_ref="uice_mv"          name="sivelu" level="2" />
+         <field field_ref="vice_mv"          name="sivelv" level="2" />
+         <field field_ref="icevel_mv"        name="sivelo" level="2" />
+         <field field_ref="idive"            name="sidive" level="2" />
+         <field field_ref="ishear"           name="sishea" level="2" />
+         <field field_ref="icestr"           name="sistre" level="2" />
+
+     <!-- transports -->
+         <field field_ref="icetrp"           name="sivtrp" level="2" />
+         <field field_ref="snwtrp"           name="snvtrp" level="2" />
+         <field field_ref="saltrp"           name="saltrp" level="2" />
+         <field field_ref="deitrp"           name="deitrp" level="2" />
+         <field field_ref="destrp"           name="destrp" level="2" />
+
+     <!-- volume flux -->
+         <field field_ref="vfxice"           name="vfxice" level="2" />
+         <field field_ref="vfxsnw"           name="vfxsnw" level="2" />
+         <field field_ref="vfxsub"           name="vfxsub" level="2" />
+         <field field_ref="vfxsub_err"       name="vfxsub_err" level="2" />
+         <field field_ref="vfxspr"           name="vfxspr" level="2" />
+
+     <!-- ice-ocean salt flux -->
+         <field field_ref="sfx_mv"           name="sfx" level="2" />
+
+     <!-- heat fluxes -->
+         <field field_ref="hfxout"           name="hfxout"   level="2" />
+         <field field_ref="hfxin"            name="hfxin"    level="2" />
+
+     <!-- ice-atm. heat flux from mass exchange -->
+         <field field_ref="hfxsub"           name="hfxsub"   level="2" />
+         <field field_ref="hfxspr"           name="hfxspr"   level="2" />
+
+     <!-- outputs by category -->
+         <field field_ref="iceage_cat"       name="siagecat" level="2" />
+         <field field_ref="iceconc_cat"      name="siconcat" level="2" />
+         <field field_ref="icethic_cat"      name="sithicat" level="2" />
+         <field field_ref="snowthic_cat"     name="snthicat" level="2" />
+         <field field_ref="salinity_cat"     name="salincat" level="2" />
+         <field field_ref="brinevol_cat"     name="sibricat" level="2" />
+
+     <!-- ocean outputs -->
+         <field field_ref="isst"             name="sst"    level="2" />
+         <field field_ref="isss"             name="sss"    level="2" />
+
+       </file>
+      </file_group>
+
+
+      <file_group id="2m_lim" output_freq="2mo" output_level="10" enabled=".TRUE."/> <!-- real 2m files -->
+      <file_group id="3m_lim" output_freq="3mo" output_level="10" enabled=".TRUE."/> <!-- real 3m files -->
+      <file_group id="4m_lim" output_freq="4mo" output_level="10" enabled=".TRUE."/> <!-- real 4m files -->
+      <file_group id="6m_lim" output_freq="6mo" output_level="10" enabled=".TRUE."/> <!-- real 6m files -->
+      <file_group id="1y_lim"  output_freq="1y" output_level="_AUTO_" enabled="_AUTO_"/> <!-- real yearly files -->
+      <file_group id="2y_lim"  output_freq="2y" output_level="10" enabled=".TRUE."/> <!-- real 2y files -->
+      <file_group id="5y_lim"  output_freq="5y" output_level="10" enabled=".TRUE."/> <!-- real 5y files -->
+      <file_group id="10y_lim" output_freq="10y" output_level="10" enabled=".TRUE."/> <!-- real 10y files -->
+
+      <file id="maskMFO_lim" name="maskMFO_lim" enabled="true" mode="read" output_freq="1mo" cyclic="true"  >
+        <field id="maskMFO_lim_u" operation="instant"  freq_offset="-1ts"  grid_ref="grid_U_transect_lim" />
+        <field id="maskMFO_lim_v" operation="instant"  freq_offset="-1ts"  grid_ref="grid_V_transect_lim" />
+      </file>
+
+   </file_definition>
