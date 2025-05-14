@@ -17,5 +17,5 @@ Please cite: Fangyu, F. J. Vialard, S. Han, Y. Planton, M. Lengaigne, G. Sriniva
   * E.g., eOR1-IA-FLX-30-ensemble-01, eOR1-IA-FLX-30-ensemble-02,..., eOR1-IA-FLX-30-ensemble-61 is the exp restarted from 1980 Dec, 1981 Dec,..., 2018 Dec.
 
 
-
 # Instructions
+NEMO environment is needed, submit every job by using "ccc_msub Job*".
