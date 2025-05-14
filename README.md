@@ -11,9 +11,9 @@ Please cite: Fangyu, F. J. Vialard, S. Han, Y. Planton, M. Lengaigne, G. Sriniva
 * eOR1-IA-FLX-11: forcing with linear observed 3h interannual wind stress variations, 1980-2018
 
 **Memory experiments**
-* eOR1-IA-FLX-29: restarted from every Dec ocean condition from eOR1-IA-FLX-14, 61 members in total under the directory eOR1-IA-FLX-29-ensemble.
+* eOR1-IA-FLX-29: restarted from every Dec ocean condition from eOR1-IA-FLX-14, 61 members in total.
   * E.g., eOR1-IA-FLX-29-ensemble-01, eOR1-IA-FLX-29-ensemble-02,..., eOR1-IA-FLX-29-ensemble-61 is the exp restarted from 1958 Dec, 1959 Dec,..., 2018 Dec.
-* eOR1-IA-FLX-30: restarted from every Dec ocean condition from eOR1-IA-FLX-11, 39 members in total under the directory eOR1-IA-FLX-30-ensemble.
+* eOR1-IA-FLX-30: restarted from every Dec ocean condition from eOR1-IA-FLX-11, 39 members in total.
   * E.g., eOR1-IA-FLX-30-ensemble-01, eOR1-IA-FLX-30-ensemble-02,..., eOR1-IA-FLX-30-ensemble-61 is the exp restarted from 1980 Dec, 1981 Dec,..., 2018 Dec.
 
 
