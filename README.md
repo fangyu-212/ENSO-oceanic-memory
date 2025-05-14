@@ -2,7 +2,11 @@
 This repository contains the code used to get the experiments for "ENSO cycles mostly after extreme El Niño events" by Liu et al. 2025, submitted to Nature.
 
 # Description
-To build an ocean modelling methodology which allows to isolate ”oceanic memory” driving ENSO phase transition, here we use NEMO ocean model to conduct control run and memory experiments. The heat flux damping is computed interactively via linear relaxation to climatological SST. The contribution of atmospheric nonlinearities is also quantified. Details are as follows:
+To build an ocean modelling methodology which allows to isolate ”oceanic memory” driving ENSO phase transition, here we use NEMO ocean model to conduct control run and memory experiments. The heat flux damping is computed interactively via linear relaxation to climatological SST. 
+
+The contribution of atmospheric linearities is quantified by replacing the total wind stress forcing as its linear part, and the the contribution of atmospheric nonlinearities is gained by subtracting the linear contribution from the total contribution. The linear wind stress forcing is from Srinivas et al. 2024. 
+
+The details for experiments are as follows:
 
 **Control run**
 * eOR1-IA-FLX-14: forcing with total observed 3h interannual wind stress variations, 1958-2018
